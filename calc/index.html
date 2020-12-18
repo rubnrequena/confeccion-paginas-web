@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Calculadora</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+</head>
+
+<body>
+  <div id="nombre">Calculadora</div>
+  <br>
+  <div id="calculadora">
+    <div id="controles">
+      <input id="valor1" type="number" min="0" autofocus>
+      <select id="operacion">
+        <option value="1">+</option>
+        <option value="2">-</option>
+        <option value="3">*</option>
+        <option value="4">&divide;</option>
+      </select>
+      <input id="valor2" type="number" min="0">
+      <button onclick="calcular()">=</button>
+      <button onclick="reiniciar()">C</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div id="mensaje"></div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+input {
+  font-size: 40px;
+  width: 200px;
+}
+select {
+  font-size: 40px;
+}
+button {
+  font-size: 30px;
+  width: auto;
+  padding: 10px;
+}
+div {
+  background-color: aquamarine;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+#nombre {
+  font-size: 30px;
+}
+#calculadora {
+  position: relative;
+}
+#controles {
+  position: absolute;
+  top: 50%;
+}

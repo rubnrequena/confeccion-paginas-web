@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Cálculos de Geometría</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: arial;
+		}
+
+		body {
+			font-size: 1.5em;
+		}
+
+		h2,
+		div {
+			width: 80%;
+			background-color: lightblue;
+			text-align: center;
+			padding: 10px;
+			margin: 10px auto;
+		}
+
+		input,
+		select {
+			font-size: 1.0em;
+		}
+
+		input[type="text"],
+		select {
+			width: 60px;
+			padding: 10px;
+		}
+
+		input[type="button"] {
+			width: 40px;
+			height: 40px;
+			box-shadow: 2px 2px 2px black;
+		}
+
+		input.limpiar[type="button"] {
+			width: 40px;
+			height: 40px;
+			box-shadow: 2px 2px 2px black;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Cálculos de Geometría</h2>
+	<div>
+		<h3>Rectángulo</h3>
+		<span>Base: </span>
+		<input type="text" id="frbase">
+		<span>Altura: </span>
+		<input type="text" id="fraltura">
+		<input type="button" value="=" onclick="rectangulo()">
+		<span>Perímetro: </span>
+		<input type="text" id="frperimetro" disabled>
+		<span>Área: </span>
+		<input type="text" id="frarea" disabled>
+		<input type="button" value="C" onclick="borrar_rect()">
+	</div>
+	<div>
+		<h3>Triángulo</h3>
+		<span>Base: </span>
+		<input type="text" id="ftbase">
+		<span>Altura: </span>
+		<input type="text" id="ftaltura">
+		<input type="button" value="=" onclick="triangulo()">
+		<span>Perímetro: </span>
+		<input type="text" id="ftperimetro" disabled>
+		<span>Área: </span>
+		<input type="text" id="ftarea" disabled>
+		<input type="button" value="C" onclick="borrar_triangulo()">
+	</div>
+	<div>
+		<h3>Circunferencia</h3>
+		<span>Radio: </span>
+		<input type="text" id="fcradio">
+		<input type="button" value="=" onclick="circunferencia()">
+		<span>Perímetro: </span>
+		<input type="text" id="fcperimetro" disabled>
+		<span>Área: </span>
+		<input type="text" id="fcarea" disabled>
+		<input type="button" value="C" onclick="borrar_circunferencia()">
+	</div>
+
+	<script type="text/javascript">
+		function rectangulo() {
+			//capturamos los values de los input
+			srbase = Number(document.getElementById('frbase').value);
+			sraltura = Number(document.getElementById('fraltura').value);
+			// Calculamos los resultados perímetro y área
+			srperimetro = 2 * (srbase + sraltura);
+			srarea = srbase * sraltura;
+			//Esribimos los resultados en los input
+			document.getElementById('frperimetro').value = srperimetro;
+			document.getElementById('frarea').value = srarea;
+		}
+
+		function triangulo() {
+			//capturamos los values de los input
+			stbase = Number(document.getElementById('ftbase').value);
+			staltura = Number(document.getElementById('ftaltura').value);
+			// Calculamos los resultados perímetro y área
+			stperimetro = 3 * stbase;
+			starea = stbase * staltura / 2;
+			//Esribimos los resultados en los input
+			document.getElementById('ftperimetro').value = stperimetro;
+			document.getElementById('ftarea').value = starea;
+		}
+
+		function circunferencia() {
+			//capturamos los values de los input
+			scradio = Number(document.getElementById('fcradio').value);
+			// Calculamos los resultados perímetro y área
+			scperimetro = 2 * Math.PI * scradio;
+			scarea = Math.PI * Math.pow(scradio, 2);
+			//Esribimos los resultados en los input
+			document.getElementById('fcperimetro').value = scperimetro.toFixed(2);
+			document.getElementById('fcarea').value = scarea.toFixed(2);
+		}
+
+		function borrar_rect() {
+			document.getElementById('frbase').value = ''
+			document.getElementById('fraltura').value = ''
+			document.getElementById('frperimetro').value = srperimetro = ''
+			document.getElementById('frarea').value = srarea = ''
+		}
+
+		function borrar_triangulo() {
+			document.getElementById('ftbase').value = ''
+			document.getElementById('ftaltura').value = ''
+			document.getElementById('ftperimetro').value = srperimetro = ''
+			document.getElementById('ftarea').value = srarea = ''
+		}
+
+		function borrar_circunferencia() {
+			document.getElementById('fcradio').value = ''
+			document.getElementById('fcperimetro').value = srperimetro = ''
+			document.getElementById('fcarea').value = srarea = ''
+		}
+	</script>
+</body>
+
+</html>
